@@ -24,7 +24,7 @@ object Downloads extends Controller {
     println(movieFile)
 
     Result(
-      header = ResponseHeader(200,
+      header = ResponseHeader(206,
         Map(
           CONTENT_LENGTH -> movieFile.length.toString,
           CONTENT_TYPE -> "video/mp4",

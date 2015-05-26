@@ -1,0 +1,18 @@
+@(movieForm: Form[MovieForm], uploaded: Option[models.dao.Movie])
+<!DOCTYPE html>
+<html>
+<head lang="jp">
+    <title>アップロード</title>
+</head>
+<body>
+  @helper.form(action = routes.Uploads.upload, 'enctype -> "multipart/form-data") {
+    @helper.inputText(movieForm("title"))
+    <input type="file" name="movie_file">
+    @helper.textarea(movieForm("explain"))
+    <p>
+      <input type="submit">
+    </p>
+  }
+  @uploaded
+</body>
+</html>

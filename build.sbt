@@ -16,5 +16,18 @@ libraryDependencies ++= Seq(
   "ch.qos.logback"            %   "logback-classic"           % "1.1.2",
   "mysql"                     %   "mysql-connector-java"      % "5.1.31",
   "commons-io"                %   "commons-io"                % "2.4",
+  "com.github.nscala-time"    %%  "nscala-time"               % "1.2.0",
+  "com.h2database"            %   "h2"                        % "1.4.+",
+  "com.amazonaws"             %   "aws-java-sdk"              % "1.9.37",
   "org.scalatest"             %   "scalatest_2.11"            % "2.2.1"     % "test"
 )
+
+
+initialCommands := """
+import scalikejdbc._
+import skinny.orm._, feature._
+import org.joda.time._
+skinny.DBSettings.initialize()
+implicit val session = AutoSession
+"""
+
