@@ -1,0 +1,12 @@
+# Error
+error.auth=セッションが切れました。再ログインしてください。
+error.login=Email、もしくはパスワードが違います。
+
+# login
+login=ログイン
+login.title=ログイン
+login.input.email=メールアドレス
+login.input.password=パスワード
+login.ipass.button=ログイン
+login.google.button=Googleアカウントでログイン
+

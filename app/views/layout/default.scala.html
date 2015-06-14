@@ -1,0 +1,24 @@
+@(titleKey: String, auth: Option[AuthInfo])(content: Html)(implicit lang: Lang)
+
+@import views.helpers.I18nSupport._
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link type="text/css" rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")" />
+
+  <!-- jquery -->
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+  <title>@{m"$titleKey"}</title>
+</head>
+<body>
+  <div class="page-head">
+    （ZOOMロゴ的な）
+  </div>
+  <div class="page-body">
+    @content
+  </div>
+</body>
+</html>

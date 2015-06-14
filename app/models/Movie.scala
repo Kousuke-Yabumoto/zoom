@@ -66,4 +66,7 @@ object Movie {
     } yield uploadToS3(f.file, contentType)
     MovieDao.insert(form.title, form.explain, file.map(_.filename), file.flatMap(_.contentType), url)
   }
+
+  def findMivies(info: AuthInfo) = {
+  }
 }

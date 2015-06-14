@@ -8,5 +8,10 @@ GET     /movie.mp4                  controllers.Downloads.movie
 GET     /uploader                   controllers.Uploads.view
 POST    /uploader                   controllers.Uploads.upload
 
+GET     /login                      controllers.Auth.login
+POST    /login                      controllers.Auth.ipassLogin
+POST    /google_login               controllers.Auth.authenticate
+GET     /authcallback               controllers.Auth.authCallback(code: String)
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

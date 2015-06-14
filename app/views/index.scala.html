@@ -1,48 +1,26 @@
-@(movies: Seq[models.dao.Movie])
+@(movies: Seq[models.dao.Movie])(implicit lang: Lang, auth: AuthInfo)
 
-<html>
-  <head>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="/assets/javascripts/masonry.pkgd.min.js"></script>
-    <style>
-      div.contents {
-        border: 1px solid;
-        margin: 0px;
-        padding: 0px;
-        width: 320px;
-        height: 480px;
-        background-color: #ffffd1;
-      }
-      div.explain {
-        margin: 10px;
-      }
-      div.container {
-        width: 100%;
-        margin: 0 auto;   /*中央寄せ*/
-        position: relative;;
-      }
-    </style>
-    <script>
-      $(function($){
-        $('#container').masonry({
-          itemSelector: '.contents',
-          columnWidth: 330,
-          isFitWidth: true
-        });
+@import views.helpers.I18nSupport._
+
+@layout.default("viewer", Option(auth)) {
+  <script src="@routes.Assets.at("/javascripts/masonry.pkgd.min.js")"></script>
+<link type="text/css" rel="stylesheet" href="@routes.Assets.at("stylesheets/viewer.css")" />
+  <script>
+    $(function($){
+      $('#container').masonry({
+        itemSelector: '.contents',
+        columnWidth: 330,
+        isFitWidth: true
       });
-    </script>
-  </head>
-  <body>
-    <div id="container">
-      @for(movie <- movies){
-        <div class="contents">
-          <span class="title">@movie.title</span>
-          <video src="@movie.movie_url" controls preload width="320px" height="240px">
-            <p>動画を再生するにはvideoタグをサポートしたブラウザが必要です。</p>
-          </video>
-          <div class="explain">@movie.information</div>
-        </div>
-      }
+    });
+  </script>
+  @for(movie <- movies){
+    <div class="contents">
+      <span class="title">@movie.title</span>
+      <video src="@movie.movie_url" controls preload width="320px" height="240px">
+        <p>動画を再生するにはvideoタグをサポートしたブラウザが必要です。</p>
+      </video>
+      <div class="explain">@movie.information</div>
     </div>
-  </body>
-</html>
+  }
+}

@@ -19,6 +19,10 @@ libraryDependencies ++= Seq(
   "com.github.nscala-time"    %%  "nscala-time"               % "1.2.0",
   "com.h2database"            %   "h2"                        % "1.4.+",
   "com.amazonaws"             %   "aws-java-sdk"              % "1.9.37",
+  "com.google.api-client"     %   "google-api-client"         % "1.20.0",
+  "com.propensive"            %%  "rapture-core"              % "1.0.0",
+  "com.propensive"            %%  "rapture-json-jawn"         % "1.0.8",
+  "commons-codec"             %   "commons-codec"             % "1.10",
   "org.scalatest"             %   "scalatest_2.11"            % "2.2.1"     % "test"
 )
 

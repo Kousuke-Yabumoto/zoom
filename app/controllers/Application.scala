@@ -6,8 +6,9 @@ import models.dao.{Movie => MovieDao}
 
 object Application extends Controller {
 
-  def index = Action {
-    Ok(views.html.index(MovieDao.findAllModels()))
+  def index = Secured { implicit auth =>
+    implicit request =>
+      Ok(views.html.index(MovieDao.findAllModels()))
   }
 
 }

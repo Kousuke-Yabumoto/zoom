@@ -1,0 +1,37 @@
+@(errorOpt: Option[String])(implicit lang: Lang)
+
+@import views.helpers.I18nSupport._
+
+@layout.default("login", None) {
+
+  @helper.form(action = routes.Auth.ipassLogin) {
+    <h2>@{m"login.title"}</h2>
+    <br />
+    <table class="login-content border_radius">
+      <tr>
+        <td class="title"><label for="email" class="login-title">@{m"login.input.email"}</label></td>
+        <td class="input-form"><input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus></td>
+      </tr>
+      <tr>
+        <td class="title"><label for="password" class="login-title">@{m"login.input.password"}</label></td>
+        <td class="input-form"><input type="password" id="password" name="password" class="form-control" placeholder="Password" required autofocus></td>
+      </tr>
+      <tr>
+        <td colspan="2" class="button-field"><button class="btn btn-lg btn-primary btn-block" type="submit">@{m"login.ipass.button"}</button></td>
+      </tr>
+    }
+    <tr>
+      <td colspan="2" class="button-field">
+        @helper.form(action = routes.Auth.authenticate) {
+          <button type="submit">@{m"login.google.button"}</button>
+        }
+      </td>
+    </tr>
+    @if(errorOpt.isDefined){
+      <tr>
+        <td colspan="2"><span class="error-message">@errorOpt.get</span></td>
+      </tr>
+    }
+  </table>
+
+}

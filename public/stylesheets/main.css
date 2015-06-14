@@ -1,0 +1,87 @@
+* {
+    margin              : 0;
+    padding             : 0;
+    background-color    : #efefef;
+}
+div.page-head {
+    width               : 100%;
+    height              : 40px;
+    background-color    : #222222;
+    color               : #efefef;
+}
+div.page-body {
+    background-color    : #efefef;
+    color               : #222222;
+    min-height          : 95%;
+    padding             : 20px;
+}
+div.page-footer {
+    width               : 100%;
+    height              : 50px;
+    background-color    : #222222;
+    color               : #efefef;
+}
+span.header-menu {
+    margin              : 10px 20px;
+    font-size           : 10em;
+}
+button {
+  background            : #EEE;
+  border                : 1px solid #DDD;
+  border-radius         : 8px;
+  -moz-border-radius    : 8px;
+  -webkit-border-radius : 8px;
+  width                 : 100px;
+  padding               : 10px 0;
+}
+table, th, td {
+  border                : none;
+  width                 : auto;
+  padding               : 10px;
+  font-size             : 24px;
+}
+input {
+    border-radius       : 3px;
+    box-shadow          : inner 0 0 4px rgba(0, 0, 0, 0.2);
+    background-color    : white;
+}
+input:focus {
+  border                :solid 1px #EEA34A;
+}
+.border_radius {
+  border-radius         : 20px;
+  -webkit-border-radius : 20px;
+  -moz-border-radius    : 20px;
+}
+
+
+/* login page */
+table.login-content {
+  border                : none;
+  background-color      : white;
+  color                 : #222222;
+  font-size             : 16px;
+  margin                : 0 auto;
+}
+table.login-content * {
+  background-color      : white;
+  color                 : #222222;
+  font-size             : 16px;
+}
+table.login-content td.title {
+  width                 : 200px;
+  border                :
+}
+table.login-content td.input-form {
+  width                 : 250px;
+}
+table.login-content input {
+  height                : 25px;
+  width                 : 200px;
+}
+table.login-content td.button-field {
+  text-align            : center;
+}
+table.login-content button {
+  width                 : 300px;
+}

@@ -1,0 +1,16 @@
+div.contents {
+  border: 1px solid;
+  margin: 0px;
+  padding: 0px;
+  width: 320px;
+  height: 480px;
+  background-color: #ffffd1;
+}
+div.explain {
+  margin: 10px;
+}
+div.container {
+  width: 100%;
+  margin: 0 auto;   /*中央寄せ*/
+  position: relative;;
+}

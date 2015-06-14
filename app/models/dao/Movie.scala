@@ -15,6 +15,10 @@ case class Movie(
   movie_url: Option[String],
   content_type: Option[String],
   information: Option[String],
+  month: Int,
+  tag: Int,
+  auth_level: Int,
+  status: Int,
   update_time: String
 )
 
@@ -31,6 +35,15 @@ object Movie extends SkinnyCRUDMapper[Movie] {
       'content_type -> contentType
     )
     findById(id)
+  }
+
+  def findByAuth(authLevel: Int, tag: Option[Int]= None, month: Option[Int] = None) = {
+    val conditions = sqls.toAndConditionOpt(
+      Option(sqls"auth_level & ${authLevel} = ${authLevel}"),
+      tag.map(t => sqls.eq(Movie.column.tag, t)),
+      month.map(m => sqls.eq(Movie.column.month, m))
+    ).get // ※ひとつはOptionでくくってるものがあるので、必ず存在する
+    where(conditions).apply()
   }
 
 }
